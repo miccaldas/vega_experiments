@@ -1,0 +1,38 @@
+ *, *::before, *::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+  }
+
+body {
+  background-color: ;
+  color: ;
+  min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: ;
+    color: ;
+    font-family: ;
+    margin-top: ;
+    margin-bottom: ;
+}
+
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  align-items: ;
+}
+
+.row {
+    display: flex;
+}
+
+.footer {
+    position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-family: ;

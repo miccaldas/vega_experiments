@@ -1,0 +1,4 @@
+[tool.black]
+# I leave these values as a guide. This is useful if you want to have files or folders
+# that black doesn't format. They must in the form of regexes.
+extend-exclude = '\.\/support_files\/template_launch\.py', '\.\/support_files\/trans.*\.py'
