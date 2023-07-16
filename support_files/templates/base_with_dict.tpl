@@ -31,7 +31,15 @@
             {% if height %}
             height: {{ height }},
             {% endif %}
-            data: {{ data }},
+            data: {
+            {% if dictdata +%}
+            values: [ 
+                {% for i in dictdata %}
+                {{ i }},
+                {% endfor %} 
+            {% endif %}
+                ]
+            },
             mark: {{ mark }},
             {% if config %}
             config: {{ config }},

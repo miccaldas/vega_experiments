@@ -1,1 +1,0 @@
-Just a reminder that you still have to create a Notabug repository on the site, and that you need to write something in the README.txt file.

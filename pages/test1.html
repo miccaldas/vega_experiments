@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tag fitness score</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mclds">
+    <meta name="description" content="How well a tag describes the text of the note.">
+    <meta property="og:type" content="web page">
+    <meta property="og:url" content="http://localhost/vega_experiments/pages/tagscore.html">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost/vega_experiments/css/index.css" media="screen">
+    <style media="screen">
+      /* Add space between Vega-Embed links  */
+      .vega-actions a {
+        margin-right: 5px;
+      }
+    </style>
+</head>
+<body>
+    <div id="vis">
+    </div>
+
+    <h1>Monthly Fitness Score</h1>
+    <script>
+            // Assign the specification to a local variable vlSpec.
+            var vlSpec = {
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 800,
+            height: 800,
+            data: {'url': '../support_files/json_files/trk.json'},
+            mark: {'type': 'circle', 'tooltip': true},
+            encoding: {
+                x: {'field': 'month', 'type': 'temporal'},
+                y: {'field': 'score', 'type': 'quantitative'},
+            }
+                    };
+            vegaEmbed('#vis', vlSpec);
+    </script>
+</body>
+</html>

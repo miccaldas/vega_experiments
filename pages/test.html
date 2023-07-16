@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vega-lite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mclds">
+    <meta name="description" content="">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.9.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost/vega_experiments/css/index.css" media="screen">
+    <style media="screen">
+      /* Add space between Vega-Embed links  */
+      .vega-actions a {
+        margin-right: 5px;
+      }
+    </style>
+</head>
+<body>
+    <div id="vis">
+    </div>
+    <script>
+            // Assign the specification to a local variable vlSpec.
+            var vlSpec = {
+            $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+            width: 800,
+            data: {
+            values: [
+            {'hour': 0, 'tags': 'lists', 'count': 1},
+            {'hour': 0, 'tags': 'python', 'count': 2},
+            {'hour': 0, 'tags': 'sed', 'count': 1},
+            {'hour': 1, 'tags': 'dataframes', 'count': 1},
+            {'hour': 1, 'tags': 'files', 'count': 2},
+            {'hour': 1, 'tags': 'python', 'count': 4},
+            {'hour': 1, 'tags': 'sed', 'count': 4},
+            {'hour': 2, 'tags': 'dictionary', 'count': 1},
+            {'hour': 2, 'tags': 'lists', 'count': 2},
+            {'hour': 2, 'tags': 'mysql', 'count': 3},
+            {'hour': 2, 'tags': 'python', 'count': 3},
+            {'hour': 2, 'tags': 'sqlite', 'count': 2},
+            {'hour': 3, 'tags': 'files', 'count': 1},
+            {'hour': 3, 'tags': 'python', 'count': 3},
+            {'hour': 3, 'tags': 'mysql', 'count': 6},
+            {'hour': 14, 'tags': 'python', 'count': 4},
+            {'hour': 3, 'tags': 'sed', 'count': 1},
+            {'hour': 3, 'tags': 'sqlite', 'count': 1},
+            {'hour': 4, 'tags': 'mysql', 'count': 1},
+            {'hour': 4, 'tags': 'python', 'count': 3},
+            {'hour': 4, 'tags': 'sqlite', 'count': 1},
+            {'hour': 5, 'tags': 'lists', 'count': 2},
+            {'hour': 5, 'tags': 'files', 'count': 2},
+            {'hour': 16, 'tags': 'lists', 'count': 1},
+            {'hour': 5, 'tags': 'python', 'count': 8},
+            {'hour': 6, 'tags': 'mysql', 'count': 1},
+            {'hour': 6, 'tags': 'python', 'count': 2},
+            {'hour': 7, 'tags': 'python', 'count': 1},
+            {'hour': 8, 'tags': 'dataframes', 'count': 1},
+            {'hour': 9, 'tags': 'files', 'count': 2},
+            {'hour': 9, 'tags': 'python', 'count': 7},
+            {'hour': 9, 'tags': 'sed', 'count': 2},
+            {'hour': 10, 'tags': 'dataframes', 'count': 1},
+            {'hour': 10, 'tags': 'sed', 'count': 1},
+            {'hour': 10, 'tags': 'python', 'count': 2},
+            {'hour': 18, 'tags': 'files', 'count': 1},
+            {'hour': 11, 'tags': 'files', 'count': 1},
+            {'hour': 11, 'tags': 'mysql', 'count': 2},
+            {'hour': 11, 'tags': 'python', 'count': 2},
+            {'hour': 12, 'tags': 'mysql', 'count': 1},
+            {'hour': 12, 'tags': 'python', 'count': 3},
+            {'hour': 12, 'tags': 'sed', 'count': 1},
+            {'hour': 13, 'tags': 'dictionary', 'count': 1},
+            {'hour': 13, 'tags': 'lists', 'count': 1},
+            {'hour': 13, 'tags': 'mysql', 'count': 3},
+            {'hour': 13, 'tags': 'python', 'count': 3},
+            {'hour': 14, 'tags': 'dictionary', 'count': 1},
+            {'hour': 14, 'tags': 'files', 'count': 2},
+            {'hour': 14, 'tags': 'lists', 'count': 1},
+            {'hour': 14, 'tags': 'sqlite', 'count': 1},
+            {'hour': 14, 'tags': 'sed', 'count': 1},
+            {'hour': 21, 'tags': 'files', 'count': 2},
+            {'hour': 15, 'tags': 'dataframes', 'count': 1},
+            {'hour': 15, 'tags': 'files', 'count': 1},
+            {'hour': 15, 'tags': 'lists', 'count': 2},
+            {'hour': 15, 'tags': 'python', 'count': 1},
+            {'hour': 16, 'tags': 'files', 'count': 1},
+            {'hour': 16, 'tags': 'python', 'count': 7},
+            {'hour': 16, 'tags': 'mysql', 'count': 1},
+            {'hour': 23, 'tags': 'dictionary', 'count': 1},
+            {'hour': 16, 'tags': 'sed', 'count': 1},
+            {'hour': 16, 'tags': 'sqlite', 'count': 2},
+            {'hour': 17, 'tags': 'dictionary', 'count': 1},
+            {'hour': 17, 'tags': 'lists', 'count': 3},
+            {'hour': 17, 'tags': 'mysql', 'count': 3},
+            {'hour': 17, 'tags': 'python', 'count': 3},
+            {'hour': 17, 'tags': 'sed', 'count': 4},
+            {'hour': 17, 'tags': 'sqlite', 'count': 1},
+            {'hour': 18, 'tags': 'dataframes', 'count': 2},
+            {'hour': 18, 'tags': 'python', 'count': 5},
+            {'hour': 18, 'tags': 'mysql', 'count': 3},
+            {'hour': 18, 'tags': 'sed', 'count': 3},
+            {'hour': 18, 'tags': 'sqlite', 'count': 1},
+            {'hour': 19, 'tags': 'dataframes', 'count': 1},
+            {'hour': 19, 'tags': 'dictionary', 'count': 2},
+            {'hour': 19, 'tags': 'lists', 'count': 1},
+            {'hour': 19, 'tags': 'python', 'count': 4},
+            {'hour': 20, 'tags': 'files', 'count': 2},
+            {'hour': 20, 'tags': 'dataframes', 'count': 1},
+            {'hour': 20, 'tags': 'lists', 'count': 3},
+            {'hour': 20, 'tags': 'mysql', 'count': 1},
+            {'hour': 20, 'tags': 'python', 'count': 5},
+            {'hour': 20, 'tags': 'sed', 'count': 1},
+            {'hour': 21, 'tags': 'mysql', 'count': 1},
+            {'hour': 21, 'tags': 'lists', 'count': 1},
+            {'hour': 21, 'tags': 'python', 'count': 1},
+            {'hour': 21, 'tags': 'sed', 'count': 2},
+            {'hour': 21, 'tags': 'sqlite', 'count': 1},
+            {'hour': 22, 'tags': 'mysql', 'count': 5},
+            {'hour': 22, 'tags': 'python', 'count': 2},
+            {'hour': 23, 'tags': 'lists', 'count': 4},
+            {'hour': 23, 'tags': 'files', 'count': 2},
+            {'hour': 23, 'tags': 'lists', 'count': 4},
+            {'hour': 23, 'tags': 'mysql', 'count': 2},
+            {'hour': 23, 'tags': 'python', 'count': 10},
+            {'hour': 23, 'tags': 'sed', 'count': 1}
+                            ]
+                          },
+                  mark: 'bar',
+                 // Defines thickness of the bars.
+                 config: {"bar": {"continuousBandSize": 15},},
+                  encoding: {x: {field: "hour", type: "quantitative"}, "y": {aggregate: "sum", field: "count", type: "quantitative", stack: "normalize",}, color: {
+field: 'tags', type: 'nominal', scale: {range: ["#675193", "#ca8861", "#F99B7D", "#E76161", "#B04759", "#8BACAA", "#080202", "#9E6F21",]},},}};
+                        vegaEmbed('#vis', vlSpec);
+    </script>
+</body>
+</html>
